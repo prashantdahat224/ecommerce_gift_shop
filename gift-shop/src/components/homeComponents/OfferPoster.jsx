@@ -16,8 +16,9 @@ const OfferPoster = () => {
       try {
         const res = await fetch("/.netlify/functions/get-offers");
         const data = await res.json();
-        setOffers(data || []);
-      } catch (error) {
+        console.log("Offers response:", data);
+        setOffers(Array.isArray(data) ? data : []);// setOffers(data || []);
+       } catch (error) {
         console.error("Error fetching offers:", error.message);
       }
       setLoading(false);
@@ -45,7 +46,7 @@ const OfferPoster = () => {
         onScroll={handleScroll}
         className="flex overflow-x-scroll snap-x snap-mandatory scrollbar-hide"
       >
-        {offers.map((offer) => (
+        {Array.isArray(offers) && offers.map((offer) => ( //offers.map((offer) 
           <div key={offer.id} className="flex-shrink-0 w-full snap-center">
             <div
               onClick={() =>
@@ -54,7 +55,7 @@ const OfferPoster = () => {
               className="w-full h-40 cursor-pointer"
             >
               <LazyImage
-                src={offer.public_url}
+                src={offer.image_url}
                 alt={offer.id || ""}
                 className="w-full h-40 object-cover"
               />
@@ -65,7 +66,7 @@ const OfferPoster = () => {
 
       {/* Dots */}
       <div className="flex justify-center mt-1 space-x-2">
-        {offers.map((_, idx) => (
+        {Array.isArray(offers) && offers.map((_, idx) => ( //offers.map((_, idx)
           <button
             key={idx}
             onClick={() => {

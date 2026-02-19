@@ -11,8 +11,7 @@ export const handler = async () => {
       .from("offers")
       .select("*")
       .in("id", ["offer1", "offer2", "offer3", "offer4"])
-      .order("priority_score", { ascending: false, nullsFirst: false });
-
+      .order("create_date", { ascending: true }); // oldest → newest
     if (error) throw error;
 
     // convert storage path → public URL
