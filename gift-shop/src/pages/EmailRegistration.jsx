@@ -5,7 +5,7 @@ import { supabase } from "../supabaseClient";   // ✅ Supabase client
 import back from "../assets/icon_download_back.png";
 
 
-import logo from "../assets/logo.png";       // App logo PNG
+//import logo from "../assets/logo.png";       // App logo PNG
 import { getErrorMessage } from "../components/errorMessages"; // Import the error message utility
 
 import { useNavigate, useLocation } from "react-router-dom";  //addd
@@ -109,11 +109,11 @@ const EmailRegistration = () => {
       message=" loading..."/>
 
         <div className="flex justify-center mb-6">
-          <img
+          {/* <img
             src={logo}
             alt="Logo"
             className="h-12 w-auto"
-          />
+          /> */}
         </div>
 
         {/* Heading */}

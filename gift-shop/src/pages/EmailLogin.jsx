@@ -1,4 +1,4 @@
-import logo from "../assets/logo.png";       // App logo PNG
+//import logo from "../assets/logo.png";       // App logo PNG
 import { getErrorMessage } from "../components/errorMessages"; // Import the error message utility
 import React, { useState } from "react";
 import { Link} from "react-router-dom";
@@ -107,11 +107,11 @@ const EmailLogin = () => {
              <FullScreenLoader loading={loading}
       message=" loading..."/>
         <div className="flex justify-center mb-6">
-          <img
+          {/* <img
             src={logo}
             alt="Logo"
             className="h-12 w-auto"
-          />
+          /> */}
         </div>
 
         {/* Heading */}

@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../../assets/logo.png";       // App logo PNG
+//import logo from "../../assets/logo.png";       // App logo PNG
 //import searchIcon from "../../assets/icons_downloaded_heart_default.png"; // Action icon PNG
 import searchIcon from "../../assets/icons_downloaded_heart_clicked.png"; // Action icon PNG
 //import cartIcon from "../../assets/icons_downloaded_cart_default.png";     // Action icon PNG
@@ -19,12 +19,12 @@ const Header = () => {
         
         {/* Left: Logo */}
         <div className="flex-shrink-0">
-          <img
+          {/* <img
            
             src={logo}
             alt="App Logo"
             className="h-10 w-auto sm:h-12 object-contain"
-          />
+          /> */}
         </div>
 
         {/* Right: Action Icons */}
